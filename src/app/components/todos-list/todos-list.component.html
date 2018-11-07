@@ -1,13 +1,16 @@
-<h2 class="mat-h2">
-    Todo list
-</h2>
+<div class="content-holder">
+    <h2 class="headline">
+        Todo list
+    </h2>
+</div>
 
 <cdk-virtual-scroll-viewport *ngIf="todos" class="scroll-viewport" itemSize="100">
     <mat-list>
         <mat-list-item *cdkVirtualFor="let todo of todos | async as todo" class="scroll-item">
             <mat-icon mat-list-icon>person</mat-icon>
             <h4 matLine>{{todo.title}}</h4>
-            <p matLine *ngIf="todo.user">{{todo.user.name}} <span *ngIf="todo.user.email">({{todo.user.email}})</span></p>
+            <p matLine *ngIf="todo.user">{{todo.user.name}} <span *ngIf="todo.user.email">({{todo.user.email}})</span>
+            </p>
             <h6 matLine>{{todo.completed ? "Completed" : "Incompleted"}}</h6>
         </mat-list-item>
     </mat-list>
