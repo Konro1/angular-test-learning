@@ -1,4 +1,9 @@
-<nav>
-  <li><a href="/todos" routerLink="todos">Todos list</a></li>
-  <li><a href="/" routerLink="">Home</a></li>
+<nav mat-tab-nav-bar color="primary">
+    <a mat-tab-link
+       *ngFor="let link of links"
+       [routerLink]="link.route"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+        {{link.name}}
+    </a>
 </nav>
