@@ -4,6 +4,7 @@ import {MaterialModule} from './material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,7 +27,8 @@ import {HomeComponent} from './components/home/home.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        ScrollingModule
+        ScrollingModule,
+        DragDropModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,3 +1,52 @@
-<h2 class="headline">
-  home works!
-</h2>
+<div class="example-container">
+    <h2>To do</h2>
+
+    <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+
+        <div *ngFor="let item of todo" cdkDrag class="example-box mat-list">
+            <div class="item-content">
+                <mat-icon class="list-icon">person</mat-icon>
+                <div class="list-text">
+                    <h4 class="mat-h4">{{item.title}}</h4>
+                    <p class="body-1" *ngIf="item.user">{{item.user.name}} <span
+                            *ngIf="item.user.email">({{item.user.email}})</span>
+                    </p>
+                    <p class="body-2">{{item.completed ? "Completed" : "Incompleted"}}</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="example-container">
+    <h2>Done</h2>
+
+    <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[todoList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let todo of done" cdkDrag class="example-box mat-list">
+            <div class="item-content">
+                <mat-icon class="list-icon">person</mat-icon>
+                <div class="list-text">
+                    <h4 class="mat-h4">{{todo.title}}</h4>
+                    <p class="body-1" *ngIf="todo.user">{{todo.user.name}} <span
+                            *ngIf="todo.user.email">({{todo.user.email}})</span>
+                    </p>
+                    <p class="body-2">{{todo.completed ? "Completed" : "Incompleted"}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
