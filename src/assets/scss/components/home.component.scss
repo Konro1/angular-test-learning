@@ -4,7 +4,6 @@
   margin: 0 $large-spacer $large-spacer 0;
   display: inline-block;
   vertical-align: top;
-
   .example-list {
     border: solid 1px #ccc;
     min-height: $xlarge-spacer*2;
@@ -13,50 +12,51 @@
     overflow: hidden;
     display: block;
     height: auto;
-    .item-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      box-sizing: border-box;
-      padding: $small-spacer $regular-spacer;
-      position: relative;
-      height: inherit;
-      border-bottom: solid 1px #ccc;
-      color: rgba(0, 0, 0, 0.87);
-      justify-content: space-between;
-      cursor: move;
-      background: white;
-      .list-icon {
-        flex-shrink: 0;
-        width: $large-spacer;
-        height: $large-spacer;
-        font-size: $large-spacer;
-        box-sizing: content-box;
-        border-radius: 50%;
-        padding: $small-spacer*0.5;
-      }
-      .list-text {
-        padding-right: 0;
-        padding-left: $regular-spacer;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow: hidden;
-        h4, p {
-          margin: 0;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .completed {
-          color: $success;
-        }
-        .incompleted {
-          color: $danger;
-        }
-      }
-    }
 
+  }
+}
+
+.item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: $small-spacer $regular-spacer;
+  position: relative;
+  height: inherit;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  justify-content: space-between;
+  cursor: move;
+  background: white;
+  .list-icon {
+    flex-shrink: 0;
+    width: $large-spacer;
+    height: $large-spacer;
+    font-size: $large-spacer;
+    box-sizing: content-box;
+    border-radius: 50%;
+    padding: $small-spacer*0.5;
+  }
+  .list-text {
+    padding-right: 0;
+    padding-left: $regular-spacer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    h4, p {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .completed {
+      color: $success;
+    }
+    .incompleted {
+      color: $danger;
+    }
   }
 }
 
