@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/scss/variables";
+@import "assets/scss/mixins";
+@import "assets/scss/flexbox";
+@import "assets/scss/custom-theme";
+@import "assets/scss/typography";
+@import "assets/scss/dialog";
+@import "assets/scss/forms";
+@import "assets/scss/utils";
+@import "assets/scss/general";
+@import "assets/scss/components/todos-list.component";

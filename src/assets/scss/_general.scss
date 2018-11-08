@@ -1,0 +1,18 @@
+/* GENERAl STYLES */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: $regular-spacer auto;
+}
+
+.mat-card.container {
+  @extend .container;
+  padding: $large-spacer;
+  @include respond-to(phones) {
+    margin: 8px;
+  }
+}
