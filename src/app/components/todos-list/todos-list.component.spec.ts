@@ -1,17 +1,14 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {TodosListComponent} from './todos-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import {TestBedConfiguration} from '../../TestBedConfiguration';
 
 describe('TodosListComponent', () => {
   let component: TodosListComponent;
   let fixture: ComponentFixture<TodosListComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-        imports: [HttpClientModule],
-        declarations: [TodosListComponent]
-      })
+    TestBed.configureTestingModule(TestBedConfiguration)
       .compileComponents();
 
     fixture = TestBed.createComponent(TodosListComponent);

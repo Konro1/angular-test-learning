@@ -1,23 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import {HomeComponent} from './components/home/home.component';
-import {NavigationComponent} from './components/navigation/navigation.component';
-import {TodosListComponent} from './components/todos-list/todos-list.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {TestBedConfiguration} from './TestBedConfiguration';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent,
-        HomeComponent,
-        NavigationComponent,
-        TodosListComponent,
-      ],
-    }).compileComponents();
+    TestBed.configureTestingModule(TestBedConfiguration).compileComponents();
   }));
 
   it('should create the app', () => {
