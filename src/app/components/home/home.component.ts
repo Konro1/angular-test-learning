@@ -3,12 +3,10 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import {TodosService} from '../../services/todos.service';
 import {Subscription} from 'rxjs';
 import {Todo} from '../../types/Todo';
-import {map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-home',
     templateUrl: 'home.component.html',
-    styleUrls: ['home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
     public data: Subscription;
@@ -19,11 +17,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
 
-    drop(event: CdkDragDrop<string[]>) {
-        console.log(event);
+    drop(event: CdkDragDrop<Todo[]>) {
         if (event.previousContainer === event.container) {
             moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         } else {
+            event.previousContainer.data[event.previousIndex].completed = !event.previousContainer.data[event.previousIndex].completed;
             transferArrayItem(event.previousContainer.data,
                 event.container.data,
                 event.previousIndex,
