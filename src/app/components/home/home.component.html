@@ -17,7 +17,7 @@
                     <p class="body-1" *ngIf="item.user">{{item.user.name}} <span
                             *ngIf="item.user.email">({{item.user.email}})</span>
                     </p>
-                    <p class="body-2">{{item.completed ? "Completed" : "Incompleted"}}</p>
+                    <p [ngClass]="{'incompleted': !todo.completed}" class="body-2">Incompleted</p>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     <p class="body-1" *ngIf="todo.user">{{todo.user.name}} <span
                             *ngIf="todo.user.email">({{todo.user.email}})</span>
                     </p>
-                    <p class="body-2">{{todo.completed ? "Completed" : "Incompleted"}}</p>
+                    <p [ngClass]="{'completed': todo.completed}" class="body-2">Completed</p>
                 </div>
             </div>
         </div>
